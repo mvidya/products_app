@@ -1,0 +1,21 @@
+<h1>Listng Products</h1>
+
+<table style="border: 1px solid black;">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Status</th>
+		<th>Amount</th>
+		<th>Actions</th>
+	</tr>
+
+	<% @products.each do |p|%>
+	<tr>
+		<td><%= p.name %></td>
+		<td><%= p.description %></td>
+		<td><%= p.status %></td>
+		<td><%= p.amount %></td>
+		<td><%= link_to "Delete", product_path(p), :method => :delete, :confirm=> "Are you sure!"%></td>
+	</tr>
+	<% end %>
+</table>
